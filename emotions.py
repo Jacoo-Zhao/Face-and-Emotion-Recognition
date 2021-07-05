@@ -13,6 +13,7 @@ from utils.inference import apply_offsets
 from utils.inference import load_detection_model
 from utils.preprocessor import preprocess_input
 
+
 USE_WEBCAM = False # If false, loads video file source
 
 # parameters for loading data and images
@@ -49,9 +50,9 @@ else:
     cap = cv2.VideoCapture('./test/testvdo.mp4') # Video file source
 
 while cap.isOpened(): # True:
-    ret, bgr_image = cap.read()
+    # ret, bgr_image = cap.read()
 
-    #bgr_image = video_capture.read()[1]
+    bgr_image = video_capture.read()[1]
 
     gray_image = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2GRAY)
     rgb_image = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2RGB)

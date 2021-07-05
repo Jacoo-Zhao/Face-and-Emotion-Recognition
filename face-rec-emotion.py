@@ -49,6 +49,9 @@ modi_face_encoding = face_recognition.face_encodings(modi_image)[0]
 vj_image = face_recognition.load_image_file("images/Vijay.jpg")
 vj_face_encoding = face_recognition.face_encodings(vj_image)[0]
 
+obama_image = face_recognition.load_image_file("images/Obama.jpg")
+obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
+
 # Create arrays of known face encodings and their names
 known_face_encodings = [
     obama_face_encoding,
@@ -99,7 +102,7 @@ def face_compare(frame,process_this_frame):
 
     process_this_frame = not process_this_frame
 
-    return face_names
+    # return face_names
     # Display the results
     for (top, right, bottom, left), name in zip(face_locations, face_names):
         # Scale back up face locations since the frame we detected in was scaled to 1/4 size
@@ -111,6 +114,7 @@ def face_compare(frame,process_this_frame):
         font = cv2.FONT_HERSHEY_DUPLEX
         cv2.putText(frame, name, (left + 6, bottom+20), font, 0.3, (255, 255, 255), 1)
         print ("text print")
+    return face_names
 
 # starting video streaming
 
